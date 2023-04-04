@@ -16,9 +16,8 @@ public class ScrollCredits : MonoBehaviour
 
     IEnumerator RollCreds()
     {
-        yield return new WaitForSeconds(0.5f);
         creditsRun.SetActive(true);
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(5);
         SceneManager.LoadScene(1);
     }
 }

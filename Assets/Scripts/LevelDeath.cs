@@ -22,7 +22,17 @@ public class LevelDeath : MonoBehaviour
         yield return new WaitForSeconds(2);
         fadeOut.SetActive(true);
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(1);
+        GlobalLives.currentLives--;
+        GlobalScore.currentScore = 0;
+        if (GlobalLives.currentLives == 0)
+        {
+            Cursor.visible = true;
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
 }
